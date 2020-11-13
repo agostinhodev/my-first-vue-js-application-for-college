@@ -1,4 +1,4 @@
-# projeto-aula
+# My First Vue.JS Application for College
 
 ## Project setup
 ```
