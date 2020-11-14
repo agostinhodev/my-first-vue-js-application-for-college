@@ -10,12 +10,12 @@
     <b-tabs content-class="mt-3">
       <b-tab title="List of People" active>
         
-        <list />
+        <list :listdata="items"/>
 
       </b-tab>
       <b-tab title="Register">
         
-          <register />
+          <register @pushItem="getPushItem"/>
 
       </b-tab>
     </b-tabs>
@@ -30,6 +30,36 @@
 import { List, Register } from "@/views";
 
 export default {
+
+  data: () =>{
+
+    return {
+
+      items: [
+
+        {
+
+          'name': 'Agostinho Celestino Barbosa Neto', 
+          'age': 22
+
+        },{
+
+          'name': 'Arthur Martins Prates', 
+          'age': 21
+
+        },{
+
+          'name': 'Marlon Áquila Cardoso Menegatti', 
+          'age': 20
+
+        }
+
+      ]
+
+    }
+
+  },
+
   name: "App",
   
   components: {
@@ -37,6 +67,16 @@ export default {
     'register':Register,
 
   },
+
+  methods: {
+
+    getPushItem( value ){
+
+      this.items.push(value)
+
+    }
+
+  }
 };
 </script>
 

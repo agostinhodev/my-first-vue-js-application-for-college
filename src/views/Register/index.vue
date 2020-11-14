@@ -90,13 +90,7 @@
       handleSubmit(event){
 
         event.preventDefault();
-        let people = localStorage.getItem('people');
-
-        if(people === null)
-          people = [];
-        else
-          people = JSON.parse(people);
-
+        
         let person = {
 
           name: this.name,
@@ -104,11 +98,9 @@
 
         };
 
-        people.push( person );
-        localStorage.setItem('people', JSON.stringify(people))
+        this.$emit('pushItem', person);
 
         alert('Record was created')
-        window.location.reload()
 
 
       }

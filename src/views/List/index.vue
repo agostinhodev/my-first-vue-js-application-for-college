@@ -18,6 +18,26 @@
 
   export default{
 
+    props: {
+
+      listdata: {
+        
+        type: Array,
+        required: true,
+        validator: (value) =>{
+
+          if (typeof value === 'undefined')
+            return false;
+
+          return true;
+
+
+        }
+      
+      }
+
+    },
+
     components:{
 
       BTable
@@ -28,7 +48,7 @@
 
       return{
 
-        items: JSON.parse(localStorage.getItem('people')) , 
+        items: this.listdata, 
 
         fields:[
 
