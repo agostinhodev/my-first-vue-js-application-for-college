@@ -101,7 +101,9 @@
         this.$emit('pushItem', person);
 
         alert('Record was created')
-
+        this.name = '';
+        this.age = '';
+        
 
       }
 
